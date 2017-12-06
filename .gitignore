@@ -13,9 +13,6 @@
 # Gradle
 .gradle/
 out/
-gradle/
-gradlew
-gradlew.bat
 
 # Package Files #
 *.jar
