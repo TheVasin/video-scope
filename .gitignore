@@ -13,6 +13,7 @@
 # Gradle
 .gradle/
 out/
+build/
 
 # Package Files #
 *.jar
