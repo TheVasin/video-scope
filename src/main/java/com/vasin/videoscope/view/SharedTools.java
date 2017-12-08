@@ -6,9 +6,9 @@ import javafx.fxml.FXMLLoader;
 import java.io.IOException;
 import java.net.URL;
 
-public class SharedTools {
+class SharedTools {
 
-    public static <T> T loadFromFXMLFile(String filename) {
+    static <T> T loadFromFXMLFile(String filename) {
         T obj = null;
         URL FXMLFile = VideoScope.class.getClassLoader().getResource(filename);
         FXMLLoader loader = new FXMLLoader(FXMLFile);

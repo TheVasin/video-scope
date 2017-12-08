@@ -14,19 +14,16 @@ public class CameraList {
         return list;
     }
 
-    public static void init() {
+    private static void init() {
         if (list != null) {
             return;
         }
         list = FXCollections.observableArrayList();
-        new Thread(() -> {
-            findCameras();
-        }).start();
+        new Thread(CameraList::findCameras).start();
     }
 
     private static void findCameras() {
         for (Webcam camera : Webcam.getWebcams()) {
-            String name = camera.getName();
             if (list.contains(camera)) {
                 continue;
             }

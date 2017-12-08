@@ -6,12 +6,12 @@ import javafx.stage.Stage;
 
 public class MainWindow {
     private Stage stage;
-    private AnchorPane rootPane;
 
     public MainWindow(String title) {
         this.stage = new Stage();
         this.stage.setTitle(title);
-        rootPane = (AnchorPane) SharedTools.loadFromFXMLFile("MainWindow.fxml");
+        this.stage.setMaximized(true);
+        AnchorPane rootPane = SharedTools.loadFromFXMLFile("MainWindow.fxml");
         Scene scene = new Scene(rootPane);
         stage.setScene(scene);
     }
