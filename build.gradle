@@ -21,4 +21,8 @@ jar {
                 'Main-Class': 'com.vasin.videoscope.VideoScope'
         )
     }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 }

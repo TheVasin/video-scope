@@ -14,6 +14,9 @@ public class CameraFinderController {
     @FXML
     private Button selectButton;
 
+    @FXML
+    private Button refreshButton;
+
     private VideoScope application;
 
     public CameraFinderController() {
@@ -22,5 +25,10 @@ public class CameraFinderController {
     @FXML
     private void initialize() {
         cameraList.setItems(CameraList.getList());
+    }
+
+    @FXML
+    private void handleRefreshButton() {
+        CameraList.findCameras();
     }
 }
