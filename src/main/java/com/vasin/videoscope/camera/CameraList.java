@@ -22,7 +22,7 @@ public class CameraList {
         new Thread(CameraList::findCameras).start();
     }
 
-    private static void findCameras() {
+    public static void findCameras() {
         for (Webcam camera : Webcam.getWebcams()) {
             if (list.contains(camera)) {
                 continue;
