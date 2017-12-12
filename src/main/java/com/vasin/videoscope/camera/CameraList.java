@@ -7,6 +7,8 @@ import javafx.collections.ObservableList;
 public class CameraList {
     private static volatile ObservableList<Webcam> list;
 
+    private static volatile Webcam defaultCamera;
+
     public static ObservableList<Webcam> getList() {
         if (null == list) {
             init();
@@ -30,4 +32,13 @@ public class CameraList {
             list.add(camera);
         }
     }
+
+    public static Webcam getDefaultCamera() {
+        return defaultCamera;
+    }
+
+    public static void setDefaultCamera(Webcam defaultCamera) {
+        CameraList.defaultCamera = defaultCamera;
+    }
+
 }

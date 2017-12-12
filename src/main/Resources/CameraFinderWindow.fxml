@@ -8,13 +8,13 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vasin.videoscope.controller.CameraFinderController">
    <center>
-      <ListView fx:id="cameraList" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <ListView fx:id="cameraList" onKeyReleased="#handleCameraListSelection" onMouseClicked="#handleCameraListSelection" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </center>
    <bottom>
       <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <buttons>
           <Button fx:id="refreshButton" mnemonicParsing="false" onAction="#handleRefreshButton" text="Refresh" />
-            <Button mnemonicParsing="false" text="Select" />
+            <Button fx:id="selectButton" defaultButton="true" disable="true" mnemonicParsing="false" onAction="#handleSelectButton" text="Select" />
         </buttons>
          <BorderPane.margin>
             <Insets />
