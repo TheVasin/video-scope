@@ -1,18 +1,18 @@
 package com.vasin.videoscope.view;
 
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class CameraFinderWindow {
+public class SettingsWindow {
     private Stage stage;
 
-    public CameraFinderWindow(String title) {
+    public SettingsWindow() {
         this.stage = new Stage();
-        this.stage.setTitle(title);
+        this.stage.setTitle("Settings");
         stage.initModality(Modality.APPLICATION_MODAL);
-        BorderPane rootPane = SharedTools.loadFromFXMLFile("CameraFinderWindow.fxml");
+        AnchorPane rootPane = SharedTools.loadFromFXMLFile("SettingsWindow.fxml");
         Scene scene = new Scene(rootPane);
         stage.setScene(scene);
     }

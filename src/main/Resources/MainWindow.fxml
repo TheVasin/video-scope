@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<?import javafx.scene.layout.*?>
+<AnchorPane minHeight="800.0" minWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vasin.videoscope.controller.MainController">
    <children>
-      <BorderPane prefHeight="400.0" prefWidth="600.0">
+      <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
             <MenuBar BorderPane.alignment="CENTER">
               <menus>
@@ -39,23 +31,32 @@
          <right>
             <ListView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
          </right>
-         <bottom>
-            <HBox prefHeight="100.0" prefWidth="719.0" BorderPane.alignment="CENTER" />
-         </bottom>
          <center>
             <TabPane prefHeight="400.0" prefWidth="600.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" tabMinHeight="50.0" tabMinWidth="50.0" BorderPane.alignment="CENTER">
               <tabs>
                 <Tab text="Камера">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="271.0" prefWidth="188.0">
+                     <content>
+                        <GridPane fx:id="cameraGrid" alignment="CENTER">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="100.0" prefHeight="100" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
                            <children>
-                              <Pane fx:id="camview" prefHeight="200.0" prefWidth="200.0">
-                                 <children>
-                                    <ImageView fx:id="camimage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                                 </children>
-                              </Pane>
-                           </children></AnchorPane>
-                  </content>
+                              <Button alignment="CENTER" defaultButton="true" mnemonicParsing="false" prefWidth="300.0" text="Capture" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                                 <GridPane.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </GridPane.margin>
+                              </Button>
+                              <ImageView fx:id="cameraView" fitHeight="1024.0" fitWidth="1024.0" onMouseClicked="#startStreamHandler" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                           </children>
+                        </GridPane>
+                     </content>
                 </Tab>
                 <Tab text="Отчет">
                   <content>
@@ -65,6 +66,9 @@
               </tabs>
             </TabPane>
          </center>
+         <bottom>
+            <HBox prefHeight="100.0" prefWidth="719.0" BorderPane.alignment="CENTER" />
+         </bottom>
       </BorderPane>
    </children>
 </AnchorPane>

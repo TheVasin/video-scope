@@ -41,4 +41,7 @@ public class CameraList {
         CameraList.defaultCamera = defaultCamera;
     }
 
+    public static void openCamera(Webcam camera) {
+        new Thread(camera::open).start();
+    }
 }

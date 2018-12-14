@@ -1,8 +1,8 @@
 package com.vasin.videoscope;
 
 import com.vasin.videoscope.logger.AppLogger;
-import com.vasin.videoscope.view.CameraFinderWindow;
 import com.vasin.videoscope.view.MainWindow;
+import com.vasin.videoscope.view.SettingsWindow;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import org.slf4j.Logger;
@@ -13,9 +13,9 @@ public class VideoScope extends Application {
     public void start(Stage primaryStage) {
         AppLogger.info("Starting application");
         MainWindow mainWindow = new MainWindow("Video Scope");
-        CameraFinderWindow finderWindow = new CameraFinderWindow("Please select a camera to use");
+        SettingsWindow settingsWindow = new SettingsWindow();
         mainWindow.show();
-        finderWindow.show();
+        settingsWindow.show();
     }
 
     public static void main(String[] args) {
